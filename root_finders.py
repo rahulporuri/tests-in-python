@@ -27,7 +27,7 @@ class Bisection():
         self.root = estimate_root
 
 
-class NewtonRhapson():
+class Secant():
     """
 
     """
@@ -55,14 +55,15 @@ class NewtonRhapson():
         self.root = estimate_root
 
 
+
 if __name__ == "__main__":
     print "bisection"
     bisection = Bisection([(1,3), (1,2), (1,1),-2], [-1,1])
     bisection._find_root()
     print bisection.root
 
-    print "newton rhapson"
+    print "secant"
     function = lambda x : x**2-4
-    newton_rhapson = NewtonRhapson(function, [-5,0])
-    newton_rhapson._find_root()
-    print newton_rhapson.root
+    secant = Secant(function, [-5,0])
+    secant._find_root()
+    print secant.root

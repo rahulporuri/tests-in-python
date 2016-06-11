@@ -1,6 +1,6 @@
 import unittest
 
-from root_finders import Bisection, NewtonRhapson
+from root_finders import Bisection, Secant
 
 class testRootFinders(unittest.TestCase):
     """
@@ -42,17 +42,17 @@ class testRootFinders(unittest.TestCase):
         initial_guess = [-5,5]
         root = 1
 
-        newton_rhapson = NewtonRhapson(function, initial_guess)
-        newton_rhapson._find_root()
+        secant = Secant(function, initial_guess)
+        secant._find_root()
 
-        self.assertEqual(root, newton_rhapson.root)
+        self.assertEqual(root, secant.root)
     
-    def test_newton_rhapson_quadratic_function_1(self):
+    def test_secant_quadratic_function_1(self):
         function = lambda x: x**2-4
         initial_guess = [-5,0]
         root = -2
 
-        newton_rhapson = NewtonRhapson(function, initial_guess)
-        newton_rhapson._find_root()
+        secant = Secant(function, initial_guess)
+        secant._find_root()
 
-        self.assertEqual(root, newton_rhapson.root)
+        self.assertEqual(root, secant.root)
