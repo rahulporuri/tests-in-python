@@ -4,7 +4,13 @@ from root_finders import Bisection, Secant, NewtonRhapson
 
 
 class testRootFinders(unittest.TestCase):
-    """
+    """ tests the root finding methods implemented in root_finders.py
+    to verify the results they produce. the methods defined herein
+    follow a similar layout -
+
+    1. define the function, initial guess and known root of the polynomial
+    2. instantiate the class being tested with the relevant inputs
+    3. check that the root value computed is the same as that expected.
 
     """
 
